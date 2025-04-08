@@ -16,7 +16,7 @@ st.set_page_config(page_title="Neuropsicologia 🧠", layout="centered")
 st.title("📝 Dinâmica de Neuropsicologia")
 st.divider()
 st.write("Responda o formulário a seguir para participar da dinâmica. Suas respostas serão utilizadas em sala de aula de forma anônima.")
-st.write("📌 ATENÇÃO: Não esqueça de fazer o download da tabela ou tirar um print para usar em sala de aula!")
+st.write("📌 ATENÇÃO: Não esqueça de fazer o download da correção automática após enviar o formulário!")
 st.divider()
 supabase = get_supabase_client()
 
@@ -81,15 +81,14 @@ if enviado:
     buf = BytesIO()
     plt.savefig(buf, format="png", bbox_inches="tight", dpi=300)
     buf.seek(0)
+    
+    st.write("📌 ATENÇÃO: Não esqueça de fazer o download da correção automática após enviar o formulário!")
+    st.table(df)
 
-    # 📥 Botão de download da imagem
+     # 📥 Botão de download da imagem
     st.download_button(
         label="🖼️ Baixar imagem da tabela (.png)",
         data=buf,
         file_name=f"resultado_bis11_{nome.replace(' ', '_').lower()}.png",
         mime="image/png"
     )
-
-    st.table(df)
-
-    st.write("📌 ATENÇÃO: Não esqueça de fazer o download da tabela ou tirar um print para usar em sala de aula!")

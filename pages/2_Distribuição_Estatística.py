@@ -38,7 +38,7 @@ for entry in dados:
 df = pd.DataFrame(registros)
 
 # 📦 Boxplot por fator
-st.subheader("📦 Boxplot por Fator (BIS-11)")
+st.subheader("📦 Boxplot por Fator")
 
 fig_box = px.box(df, x="Fator", y="Pontuação", points="all", color="Fator")
 st.plotly_chart(fig_box, use_container_width=True)
