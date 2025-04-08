@@ -1,0 +1,7 @@
+streamlit>=1.42.2
+bcrypt
+supabase
+streamlit-extras
+plotly>=5.0.0
+scipy
+pandas
